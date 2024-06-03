@@ -110,7 +110,7 @@ crearAnimal("goat", "Mató", 5, "female")
 
 crearAnimal("goat", "Sal", 4, "female")
 crearAnimal("goat", "Pebre", 4, "female")
-crearAnimal("goat", "Oli", 5, "male")
+crearAnimal("goat", "Oli", 4, "male")
 
 crearAnimal("peacock", "Pavoooo", 4, "male")
 crearAnimal("peacock", "Pavaaaa", 4, "female")
@@ -119,7 +119,12 @@ crearAnimal("peacock", "Aniol", 1, "female")
 
 
 const showPresentation = (animal) => {
-  //event.preventDefault()
+  const presentation = document.getElementById("presentation")
+  
+  for( let i = 0; i < presentation.children.length; i++) {
+    presentation.children[i].hidden = true
+  }
+
   document.getElementById(`${animal}TXT`).hidden = false;
 }
 

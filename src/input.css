@@ -7,7 +7,7 @@
         @apply border rounded-md bg-white w-full h-full p-2 text-center min-h-96;
     }
     article {
-        @apply border rounded-md bg-lime-500 text-white p-2 text-center font-bold;
+        @apply border rounded-md bg-lime-500 text-white p-2 text-center font-bold cursor-pointer;
     }
     h1 {
         @apply text-3xl text-center p-2;
