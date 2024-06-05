@@ -6,18 +6,21 @@
     <link href="../dist/output.css" rel="stylesheet" />
     <title>Document</title>
   </head>
-  <body class="bg-lime-100 h-full">
-    <header><h1>My Farm Animals</h1></header>
+  <body class="bg-lime-100">
+    <header class="flex flex-col items-center p-2">
+      <h1>My Farm Animals</h1>
+      <p class="w-[90%] bg-lime-600 border rounded-md text-white font-bold text-lg text-center">Click on animal's name to see the presentation</p>
+    </header>
     <main>
       <div class="w-full p-5 flex gap-2 justify-between">
-        <section id="dogs"><h2>Dogs 🐶</h2></section>
-        <section id="cats"><h2>Cats 😺</h2></section>
-        <section id="goats"><h2>Goats 🐐</h2></section>
-        <section id="peacocks"><h1>Peacocks 🦚</h1></section>
+        <section id="dogs" class="min-h-96"><h2>Dogs 🐶</h2></section>
+        <section id="cats" class="min-h-96"><h2>Cats 😺</h2></section>
+        <section id="goats" class="min-h-96"><h2>Goats 🐐</h2></section>
+        <section id="peacocks" class="min-h-96"><h2>Peacocks 🦚</h2></section>
       </div>
-      <section id="presentation"></section>
+      <section id="presentation" class="text-3xl font-bold"></section>
     </main>
-    <footer class="text-xs text-center">Georgina - Maig 2024</footer>
+    <footer class="text-xs text-center p-2">Georgina - Maig 2024</footer>
     <script src="classes.js"></script>
   </body>
 </html>

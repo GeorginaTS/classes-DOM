@@ -5,27 +5,27 @@ class Animal {
     this.age = age;
     this.sex = sex;
     this.legs = 4;
-    this.lang = "";
+    this.lang = "😶";
   }
   addDOM() {
     let article = document.createElement("article")
     article.id = this.name
     article.innerText = this.name
-    let section = document.getElementById(this.specie+"s")
+    let section = document.getElementById(`${this.specie}s`)
     section.appendChild(article)
   }
   addPresentation() {
     let article = document.createElement("div")
     article.id = `${this.name}TXT`
-    article.hidden = true
-    article.innerText = `${this.lang} i'm  ${this.name}, a ${this.age} years ${this.sex} ${this.specie}`
+    article.classList.add("hide")
+    article.innerText = `${this.lang} i'm  ${this.name}, a ${this.age} years old, ${this.sex} ${this.specie}`
     let presentation = document.getElementById("presentation")
     presentation.appendChild(article)
   }
 
   speak() {
     console.log(
-      `${this.lang} i'm  ${this.name}, a ${this.age} years ${this.sex} ${this.specie}`
+      `${this.lang} i'm  ${this.name}, a ${this.age} years old ${this.sex} ${this.specie}`
     );
   }
 
@@ -41,7 +41,16 @@ class Dog extends Animal {
     this.specie = "dog";
     this.lang = "🐶Bup Bup";
   }
+  getOlder() {
+    return this.age+=7
+  }
 }
+console.log("XINAAAAA")
+const xina = new Dog("Xina", 12, "female")
+console.log(xina.age)
+
+xina.getOlder()
+console.log(xina.age)
 
 class Cat extends Animal {
   constructor(name, age, sex) {
@@ -68,7 +77,7 @@ class Peacock extends Animal {
     super(name, age, sex);
     this.specie = "peacock";
     this.legs = 2;
-    this.lang = "🦚 Peaaaacock";
+    this.lang = "🦚 Peeacoooock";
   }
 
   fly() {
@@ -76,7 +85,7 @@ class Peacock extends Animal {
   }
 }
 
-
+//FUNCTION TO CREATE AN ANIMAL
 const crearAnimal = (specie, name, age, sex) => {
   let animal;
   switch (specie) {
@@ -97,7 +106,9 @@ const crearAnimal = (specie, name, age, sex) => {
   animal.addDOM()
   animal.addPresentation()
 }
-
+/* 
+Creating animals
+*/
 crearAnimal("dog", "Xina", 12, "female")
 crearAnimal("dog", "Xip", 12, "male")
 crearAnimal("dog", "Xop", 12, "male")
@@ -122,30 +133,34 @@ const showPresentation = (animal) => {
   const presentation = document.getElementById("presentation")
   
   for( let i = 0; i < presentation.children.length; i++) {
-    presentation.children[i].hidden = true
-  }
+    //presentation.children[i].classList.remove("show")
+    presentation.children[i].classList.add("hide")
+  
 
-  document.getElementById(`${animal}TXT`).hidden = false;
+  }
+  
+  document.getElementById(`${animal}TXT`).classList.remove("hide");
+ // document.getElementById(`${animal}TXT`).classList.add("show");
+  
+  
+  
 }
 
 const articles = document.querySelectorAll("article")
 articles.forEach(e => {
-  console.log(e.id)
-  e.classList.add("hover:bg-lime-400")
   e.addEventListener("click", (event) => {
     event.preventDefault()
     showPresentation(e.id) 
   }
   )
 })
-  
+
 
 //animalPresentacion(xina.speak())
 
 // const Xina = new Dog("Xina", 12, "female")
 // Xina.speak();
 // Xina.addDOM();
-
 
 // const mel = new Goat("Mel", 5, "female");
 // mel.speak();
