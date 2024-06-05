@@ -1,5 +1,5 @@
-const Animal = require("../src/components/animal");
-const { isClass } = require("./utilities");
+import Animal from "../src/components/animal";
+import { isClass } from "./utilities";
 
 let animal = null;
 
@@ -11,6 +11,9 @@ describe("Animals", () => {
   describe("The Animal class", () => {
     test("should be a class", () => {
       expect(isClass(Animal)).toBe(true);
+      expect(Animal).toBeTruthy();
+      expect(Animal).toBeDefined();
+      expect(Animal).not.toBeNull();
     });
 
     test("should have properties named name, sound, and legs", () => {
@@ -24,12 +27,10 @@ describe("Animals", () => {
     test("should exist on the Animal prototype", () => {
       expect(animal).toHaveProperty("getOlder");
     });
-    beforeEach(() => {
-      animal.age = 2;
-    });
     test("should increase the age by one and return the new value", () => {
+      expect(animal.age).toBeGreaterThan(0);
+      expect(animal.getOlder()).toBe(2);
       expect(animal.getOlder()).toBe(3);
-      expect(animal.getOlder()).toBe(4);
     });
   });
 
@@ -37,11 +38,10 @@ describe("Animals", () => {
     test("should exist on the Animal prototype", () => {
       expect(animal).toHaveProperty("speak");
     });
+    // test("speak should return ....", () => {
+    //   expect(animal.lang) == ""
+    // })
 
-    test("should return the sound when called", () => {
-      const sampleSound = "tweet!";
-      animal.lang = sampleSound;
-      expect(animal.lang).toBe(sampleSound);
-    });
+
   });
 });

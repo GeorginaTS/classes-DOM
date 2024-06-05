@@ -1,6 +1,6 @@
-const Animal = require('./animal');
+import Animal from "./animal.js";
 
-class Dog extends Animal {
+export default class Dog extends Animal {
     constructor(name, age, sex) {
       super(name);
       this.specie = "dog";
@@ -12,5 +12,3 @@ class Dog extends Animal {
       return this.age+=7
     }
   }
-
-  module.exports = Dog

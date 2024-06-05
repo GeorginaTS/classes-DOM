@@ -1,11 +1,11 @@
-const Cat = require("../src/components/cat");
-const { isClass } = require("./utilities");
+import Cat from "../src/components/cat";
+import { isClass } from "./utilities";
 
 let cat = null;
 
 describe("Cat", () => {
   beforeEach(() => {
-    cat = new Cat();
+    cat = new Cat("Pica", 10, "female");
   });
 
   describe("The Cat class", () => {
@@ -20,7 +20,7 @@ describe("Cat", () => {
     });
     
     test("should have have preset properties for age and legs", () => {
-      expect(cat.age).toBe(1)
+      expect(cat.age).toBe(10)
       expect(cat.legs).toBe(4);
     });
   });
@@ -30,11 +30,10 @@ describe("Cat", () => {
     });
 
     test("should increase the age by 1 each time it is called", () => {
-      cat = new Cat();
       cat.getOlder();
       cat.getOlder();
       cat.getOlder();
-      expect(cat.age).toBe(4);
+      expect(cat.age).toBe(13);
     });
   });
 });

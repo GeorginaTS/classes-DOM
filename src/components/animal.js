@@ -1,4 +1,4 @@
-class Animal {
+export default class Animal {
   constructor(name, age, sex) {
     this.name = name;
     this.specie = "to define";
@@ -27,6 +27,7 @@ class Animal {
     console.log(
       `${this.lang} i'm  ${this.name}, a ${this.age} years old ${this.sex} ${this.specie}`
     );
+    return this.lang
   }
 
   sleep() {
@@ -37,5 +38,3 @@ class Animal {
     return ++this.age;
   }
 }
-
-module.exports = Animal

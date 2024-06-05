@@ -1,6 +1,6 @@
+import Animal from "./animal.js";
 
-
-class Goat extends Animal {
+export default class Goat extends Animal {
     constructor(name, age, sex) {
       super(name, age, sex);
       this.specie = "goat";

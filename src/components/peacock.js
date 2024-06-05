@@ -1,4 +1,6 @@
-class Peacock extends Animal {
+import Animal from "./animal.js";
+
+export default class Peacock extends Animal {
     constructor(name, age, sex) {
       super(name, age, sex);
       this.specie = "peacock";
