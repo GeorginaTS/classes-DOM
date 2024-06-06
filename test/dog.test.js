@@ -1,6 +1,7 @@
 
-import Dog from "../src/components/dog";
-import { isClass } from "./utilities";
+import Dog from "../src/components/dog.js";
+import Animal from "../src/components/animal.js";
+import { isClass } from "./utilities.js";
 
 let dog = null;
 
@@ -14,13 +15,17 @@ describe("Dogs", () => {
       expect(isClass(Dog)).toBe(true);
     });
 
+    test('should be instance of Animal', () => {
+      expect(dog).toBeInstanceOf(Animal);
+   });
+
     test("should have properties for name, lang and age", () => {
       expect(dog).toHaveProperty("name");
       expect(dog).toHaveProperty("lang");
       expect(dog).toHaveProperty("age");
     });
 
-    test("should have have preset properties for name(Xina) age(12) and sex (female", () => {
+    test("should have have preset properties for name(Xina) age(12) and sex (female)", () => {
       expect(dog.name).toBe("Xina");
       expect(dog.age).toBe(12);
       expect(dog.sex).toBe("female");

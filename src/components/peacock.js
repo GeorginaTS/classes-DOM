@@ -6,6 +6,8 @@ export default class Peacock extends Animal {
       this.specie = "peacock";
       this.legs = 2;
       this.lang = "🦚 Peeacoooock";
+      this.age = age
+      this.sex = sex
     }
   
     fly() {

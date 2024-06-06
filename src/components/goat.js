@@ -5,6 +5,8 @@ export default class Goat extends Animal {
       super(name, age, sex);
       this.specie = "goat";
       this.lang = "🐐 Beeeee";
+      this.age = age
+      this.sex = sex
     }
   
     junp() {

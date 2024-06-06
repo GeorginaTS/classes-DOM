@@ -3,6 +3,8 @@
  * https://jestjs.io/docs/configuration
  */
 
+import { TestEnvironment } from 'jest-environment-jsdom';
+
 /** @type {import('jest').Config} */
 const config = {
   // All imported modules in your tests should be mocked automatically
@@ -145,10 +147,14 @@ const config = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  // testEnvironment: "jest-environment-node",
+  //testEnvironment :'jsdom',
+  //testEnvironment: "jest-environment-node",
 
   // Options that will be passed to the testEnvironment
-  // testEnvironmentOptions: {},
+  testEnvironmentOptions: {
+    html: '<html></html>',
+    url: 'https://jestjs.io/',
+  },
 
   // Adds a location field to test results
   // testLocationInResults: false,
